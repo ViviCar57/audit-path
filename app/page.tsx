@@ -1,47 +1,6 @@
-export default function Page() {
-  return (
-    <main
-      style={{
-        colorScheme: 'light dark',
-        position: 'relative',
-        display: 'flex',
-        minHeight: '100vh',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: 'light-dark(#fff, #000)',
-        color: 'light-dark(#000, #fff)',
-      }}
-    >
-      <svg
-        aria-hidden="true"
-        style={{ width: 80, height: 80 }}
-        width={80}
-        height={80}
-        fill="none"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
-        stroke="currentColor"
-        strokeWidth="0.5"
-      >
-        <path
-          d="M14.2 14.2H17V6.9375C17 4.76288 15.2371 3 13.0625 3H5.8V5.8M14.2 14.2V7.79063L7.79062 14.2H14.2ZM14.2 14.2V17H6.9375C4.76288 17 3 15.2371 3 13.0625V5.8H5.8M5.8 5.8V12.2313L12.2313 5.8H5.8Z"
-          strokeLinejoin="round"
-        />
-      </svg>
-      <p
-        style={{
-          position: 'absolute',
-          left: '50%',
-          top: 'calc(50% + 56px)',
-          transform: 'translateX(-50%)',
-          whiteSpace: 'nowrap',
-          fontSize: '14px',
-          fontWeight: 500,
-          color: 'light-dark(#71717a, #a1a1aa)',
-        }}
-      >
-        Your v0 generation will show here.
-      </p>
-    </main>
-  )
-}
+import Link from 'next/link'
+import Image from 'next/image'
+import { ArrowUpRight, Check } from 'lucide-react'
+import { FAQ, MobileCTA, PropertyGrid, SectionLabel, SellerCTA, SiteFooter, SiteHeader } from '@/components/site'
+
+export default function Home() { return <><SiteHeader /><main><section className="mx-auto grid max-w-7xl gap-0 px-5 py-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-10 lg:py-12"><div className="order-2 flex flex-col justify-center bg-card px-6 py-12 lg:order-1 lg:px-14 lg:py-20"><SectionLabel>Miami · Private representation</SectionLabel><h1 className="mt-6 max-w-xl font-display text-5xl leading-[0.95] md:text-7xl">Sell with a sharper sense of what comes next.</h1><p className="mt-7 max-w-md text-base leading-7 text-muted-foreground">Thoughtful guidance for Miami homeowners who want to move with clarity, discretion, and intention.</p><Link href="/sell" className="button-sage mt-9 w-fit">Sell Your Property <ArrowUpRight className="size-4" /></Link></div><div className="relative order-1 min-h-[360px] lg:order-2 lg:min-h-[620px]"><Image src="/images/real-estate/hero.png" alt="Modern Miami waterfront home at golden hour" fill priority sizes="(max-width: 1024px) 100vw, 45vw" className="object-cover" /></div></section><section className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-28"><div className="grid gap-10 md:grid-cols-[0.8fr_1.2fr] md:items-start"><SectionLabel>A more considered approach</SectionLabel><div><h2 className="max-w-2xl font-display text-4xl leading-tight md:text-6xl">The right sale is not just about a number.</h2><p className="mt-6 max-w-xl text-base leading-7 text-muted-foreground">It is about understanding the full picture: your timing, your priorities, and the particular character of the home you have built.</p></div></div><div className="mt-16 grid gap-8 border-t border-border pt-8 md:grid-cols-3"><div><p className="font-display text-5xl">01</p><h3 className="mt-5 font-display text-2xl">A clear point of view</h3><p className="mt-3 text-sm leading-6 text-muted-foreground">Market context translated into an honest, useful recommendation.</p></div><div><p className="font-display text-5xl">02</p><h3 className="mt-5 font-display text-2xl">Quiet preparation</h3><p className="mt-3 text-sm leading-6 text-muted-foreground">Every detail considered before your property meets the market.</p></div><div><p className="font-display text-5xl">03</p><h3 className="mt-5 font-display text-2xl">Steady representation</h3><p className="mt-3 text-sm leading-6 text-muted-foreground">A calm, strategic process from first conversation to closing.</p></div></div></section><section className="bg-card"><div className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-28"><div className="flex items-end justify-between gap-6"><div><SectionLabel>Selected properties</SectionLabel><h2 className="mt-4 font-display text-4xl md:text-6xl">A sense of place.</h2></div><Link href="/properties" className="hidden items-center gap-2 text-sm hover:text-sage md:flex">View all properties <ArrowUpRight className="size-4" /></Link></div><div className="mt-12"><PropertyGrid limit={3} /></div></div></section><section className="mx-auto grid max-w-7xl gap-12 px-5 py-20 md:grid-cols-2 md:items-center lg:px-10 lg:py-28"><div className="relative min-h-[480px]"><Image src="/images/real-estate/maya.png" alt="Maya Bennett, Miami luxury real estate advisor" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" /></div><div className="md:pl-10"><SectionLabel>The advisor behind the process</SectionLabel><h2 className="mt-5 font-display text-4xl leading-tight md:text-6xl">Personal, strategic, and distinctly Miami.</h2><p className="mt-6 text-base leading-7 text-muted-foreground">Maya Bennett brings a measured eye to every sale—pairing local fluency with a belief that the best advice starts with listening.</p><Link href="/about" className="mt-8 inline-flex items-center gap-2 text-sm hover:text-sage">Meet Maya <ArrowUpRight className="size-4" /></Link></div></section><section className="bg-card"><div className="mx-auto max-w-3xl px-5 py-20 lg:py-28"><SectionLabel>Questions, answered</SectionLabel><h2 className="mt-4 mb-10 font-display text-4xl md:text-6xl">A little more clarity.</h2><FAQ /></div></section><section className="mx-auto max-w-7xl px-5 py-20 lg:px-10 lg:py-28"><div className="border-l border-sage pl-6 md:pl-10"><p className="font-display text-3xl leading-tight md:text-5xl">“The process felt calm, considered, and completely ours.”</p><p className="mt-5 text-xs uppercase tracking-[0.2em] text-muted-foreground">— Private client, Coconut Grove</p></div></section></main><SellerCTA /><SiteFooter /><MobileCTA /></> }
