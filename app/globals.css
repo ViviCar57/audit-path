@@ -15,4 +15,9 @@
 @utility button-sage { display: inline-flex; align-items: center; gap: 0.55rem; background: var(--sage); color: var(--sage-foreground); padding: 0.8rem 1.15rem; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.02em; }
 @utility button-light { display: inline-flex; align-items: center; gap: 0.55rem; background: var(--sage-foreground); color: var(--sage); padding: 0.8rem 1.15rem; font-size: 0.8rem; font-weight: 600; }
 .nav-link { color: var(--muted-foreground); } .nav-link:hover { color: var(--foreground); }
+.hero-media { isolation: isolate; background: var(--muted); }
+.hero-image { animation: hero-drift 18s ease-in-out infinite alternate; transform: scale(1.04); }
+.hero-atmosphere { position: absolute; inset: -20%; z-index: 1; pointer-events: none; background: radial-gradient(circle at 22% 24%, color-mix(in oklch, var(--sage) 22%, transparent), transparent 30%), radial-gradient(circle at 78% 72%, color-mix(in oklch, var(--background) 18%, transparent), transparent 34%); mix-blend-mode: soft-light; animation: hero-light 14s ease-in-out infinite alternate; }
+@keyframes hero-drift { from { transform: scale(1.04) translate3d(-0.5%, -0.5%, 0); } to { transform: scale(1.1) translate3d(0.75%, 0.5%, 0); } }
+@keyframes hero-light { from { transform: translate3d(-2%, -1%, 0) rotate(-2deg); opacity: 0.55; } to { transform: translate3d(2%, 1%, 0) rotate(2deg); opacity: 0.9; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; } }
